@@ -35,4 +35,15 @@ export class SkyLookupAutocompleteAdapter {
 
   @Input()
   public searchResultsLimit: number;
+
+  private _tokenDescriptorProperty: string;
+
+  @Input()
+  public set tokenDescriptorProperty(tokenDescriptorProperty: string) {
+    this._tokenDescriptorProperty = tokenDescriptorProperty;
+  }
+
+  public get tokenDescriptorProperty(): string {
+    return this._tokenDescriptorProperty || this.descriptorProperty;
+  }
 }
