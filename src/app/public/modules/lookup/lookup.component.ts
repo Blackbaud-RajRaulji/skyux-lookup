@@ -64,6 +64,17 @@ export class SkyLookupComponent
   @Input()
   public placeholderText: string;
 
+  private _tokenDescriptorProperty: string;
+
+  @Input()
+  public set tokenDescriptorProperty(tokenDescriptorProperty: string) {
+    this._tokenDescriptorProperty = tokenDescriptorProperty;
+  }
+
+  public get tokenDescriptorProperty(): string {
+    return this._tokenDescriptorProperty || this.descriptorProperty;
+  }
+
   public get tokens(): SkyToken[] {
     return this._tokens;
   }
